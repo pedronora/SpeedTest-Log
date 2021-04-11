@@ -23,7 +23,7 @@ def verficar_internet(repeticoes, intervalo):
             
         print(f'----- Executando o {n+1}º teste -----')
         horario = datetime.now().strftime('%d-%m-%Y %H:%M')
-        print('Data', horario)
+        print('Data:', horario)
         download = st.download()*(10**-6)
         print('Velocidade de Download:', round(download, 2))
         upload = st.upload()*(10**-6)
