@@ -17,11 +17,11 @@ def verficar_internet(repeticoes, intervalo):
 
     st = speedtest.Speedtest()
 
-    for n in range(repeticoes):
-        if n > 0:
+    for n in range(1, repeticoes + 1):
+        if n > 1:
             time.sleep(intervalo*3600)
             
-        print(f'----- Executando o {n+1}º teste -----')
+        print(f'----- Executando o {n}º teste -----')
         horario = datetime.now().strftime('%d-%m-%Y %H:%M')
         print('Data:', horario)
         download = st.download()*(10**-6)
@@ -35,12 +35,15 @@ def verficar_internet(repeticoes, intervalo):
         df = df.append(novos_dados, ignore_index=True)
         df.to_csv(arquivo, index=False)
 
-    return df.tail(repeticoes)
+    resultado = df.tail(repeticoes).reset_index(drop=True)
+    resultado.index += 1
+
+    return resultado
 
 if __name__ == '__main__':
 
     vezes = int(input('Informe a quantidade de testes: '))
     tempo = float(input('Informe o intervalo de tempo em horas: '))
     resultado = verficar_internet(vezes, tempo)
-    print('-'*10, 'Resumo dos Resultados', '-'*10)
+    print('-'*8, 'Resumo dos Resultados', '-'*8)
     print(resultado)
