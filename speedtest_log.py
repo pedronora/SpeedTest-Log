@@ -7,7 +7,7 @@ from datetime import datetime
 def verficar_internet(repeticoes, intervalo):
     arquivo = 'dados.csv'
 
-    if os.path.isfile(arquivo):
+    if os.path.exists(arquivo):
         df = pd.read_csv(arquivo)
     else:
         dados = {'Horário': [],
