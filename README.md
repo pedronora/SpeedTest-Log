@@ -9,7 +9,7 @@ Requisitos em *requirements.txt*
 ## Imagens de tela
 
 ### Execução dos testes
-![Screenshot](https://imgoo.com/images/pBwMBq.png)
+![Screenshot](https://imgoo.com/images/pBwMBq.md.png)
 
 ### Resultado em gráfico
-![Gráfico](https://imgoo.com/images/pBwTAw.png)
+![Gráfico](https://imgoo.com/images/pBwTAw.md.png)
