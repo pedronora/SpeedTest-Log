@@ -77,6 +77,8 @@ if __name__ == '__main__':
     print(resultado)
 
     exibe_grafico = str(input('Deseja exibir um gráfico com os resultados? [S/N] '))[0].upper()
+    while exibe_grafico not in 'SN':
+        exibe_grafico = str(input('Deseja exibir um gráfico com os resultados? [S/N] '))[0].upper()
 
     if exibe_grafico == 'S':
         gerar_grafico(resultado)
